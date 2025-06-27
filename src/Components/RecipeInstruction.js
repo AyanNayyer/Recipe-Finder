@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { Person, AccessTime } from "@mui/icons-material";
 import { fetchRecipeItem, addToFavourite } from "../Redux/RecipeActions";
+import { T, useTranslate } from '@tolgee/react';
 
 const RecipeInstruction = () => {
   const { id } = useParams();
@@ -32,6 +33,7 @@ const RecipeInstruction = () => {
   } = recipeInstruction;
 
   const [showalert, setShowAlert] = useState(false);
+  const { t } = useTranslate();
 
   useEffect(() => {
     dispatch(fetchRecipeItem(id));
@@ -71,7 +73,8 @@ const RecipeInstruction = () => {
               objectFit: "cover",
             }}
           >
-            <img className="displayImage" src={image_url} alt="Recipe" />
+            <img className="displayImage" src={image_url} alt={
+t('recipe-image-alt')} />
           </Paper>
           <div className="displayCard">
             <Typography variant="h2">{title}</Typography>
@@ -87,7 +90,8 @@ const RecipeInstruction = () => {
               >
                 <Person />
                 <Typography noWrap variant="h6">
-                  Serving size:{servings}
+                  
+<T keyName="serving-size-label"/>: {servings}
                 </Typography>
               </Toolbar>
               <Toolbar
@@ -98,7 +102,8 @@ const RecipeInstruction = () => {
               >
                 <AccessTime />
                 <Typography noWrap variant="h6">
-                  Cooking time:{cooking_time}mins
+                  
+<T keyName="cooking-time-label" />: {cooking_time}mins
                 </Typography>
               </Toolbar>
             </div>
@@ -110,10 +115,12 @@ const RecipeInstruction = () => {
               >
                 {" "}
                 <Button variant="outlined" href={source_url} target="_blank">
-                  Detail Recipe
+                  
+<T keyName="detail-recipe-button" />
                 </Button>
                 <Button variant="outlined" onClick={handleAddClick}>
-                  Add to Favourite
+                  
+<T keyName="add-to-favourite-button" />
                 </Button>
                 <Alert open={showalert} setOpen={setShowAlert} />
               </Stack>
@@ -127,7 +134,8 @@ const RecipeInstruction = () => {
           }}
         >
           <Typography variant="h3" align="center">
-            Ingredients
+            
+<T keyName="ingredients-title" />
           </Typography>
           <hr />
           <ul>

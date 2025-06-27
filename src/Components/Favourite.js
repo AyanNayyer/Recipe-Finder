@@ -16,10 +16,12 @@ import { T } from '@tolgee/react';
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromFavourite } from "../Redux/RecipeActions";
 import { Link } from "react-router-dom";
+import { T, useTranslate } from "@tolgee/react";
 
 const Favourite = () => {
   const dispatch = useDispatch();
   const favouriteRecipe = useSelector((state) => state.favouriteRecipe);
+  const { t } = useTranslate();
 
   const handleClick = (id) => {
     dispatch(removeFromFavourite(id));
@@ -64,6 +66,8 @@ const Favourite = () => {
                         handleClick(value.id);
                       }}
                     >
+                      
+<T keyName="remove-from-favourite-button" />
                       
 <T keyName="remove-from-favourite-button" />
                     </Button>

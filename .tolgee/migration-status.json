@@ -35,3 +35,125 @@
     ]
   }
 }
+{
+  "src/Components/Alert.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "",
+        "description": "Snackbar message indicating the recipe is already in the favorite list",
+        "default": "Recipe is already in favorite list"
+      }
+    ]
+  },
+  "src/Components/Favourite.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "remove-from-favourite-button",
+        "description": "Button text for removing an item from favourites.",
+        "default": "Remove From Favourite"
+      },
+      {
+        "name": "favourite-list-empty-message",
+        "description": "Message displayed when the favourite list is empty.",
+        "default": "Your favourite list is empty!"
+      }
+    ]
+  },
+  "src/Components/Home.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "add-favorite-button",
+        "description": "Add to favorite button text",
+        "default": "Add Favorite"
+      },
+      {
+        "name": "nothing-to-show-message",
+        "description": "Message displayed when there are no recipes to show",
+        "default": "Nothing to show, please search something!"
+      }
+    ]
+  },
+  "src/Components/NavBar.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "recipe-finder-title",
+        "description": "The title displayed in the navigation bar.",
+        "default": "Recipe Finder"
+      },
+      {
+        "name": "",
+        "description": "Placeholder for the search input field.",
+        "default": "Search…"
+      }
+    ]
+  },
+  "src/Components/RecipeInstruction.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "serving-size-label",
+        "description": "Alt text for the recipe image.",
+        "default": "Recipe"
+      },
+      {
+        "name": "cooking-time-label",
+        "description": "Label for the serving size information.",
+        "default": "Serving size"
+      },
+      {
+        "name": "detail-recipe-button",
+        "description": "Label for the cooking time information.",
+        "default": "Cooking time"
+      },
+      {
+        "name": "add-to-favourite-button",
+        "description": "Text for the button that links to the detailed recipe.",
+        "default": "Detail Recipe"
+      },
+      {
+        "name": "ingredients-title",
+        "description": "Text for the button that adds recipe to favourites.",
+        "default": "Add to Favourite"
+      },
+      {
+        "name": "",
+        "description": "Title for the ingredients section.",
+        "default": "Ingredients"
+      }
+    ]
+  },
+  "src/Components/SearchList.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "search-list-available-queries",
+        "description": "Header for available search queries in the search list component.",
+        "default": "Available search queries"
+      }
+    ]
+  },
+  "src/Components/SearchListAlert.js": {
+    "migrated": true,
+    "keys": [
+      {
+        "name": "search-list-alert-list-button",
+        "description": "Button text to navigate to complete search list",
+        "default": "List"
+      },
+      {
+        "name": "",
+        "description": "Aria label for the close button icon in the search list alert",
+        "default": "close"
+      },
+      {
+        "name": "",
+        "description": "Message displayed in the search list alert snackbar",
+        "default": "Search terms are limited.Click here to get complete item list"
+      }
+    ]
+  }
+}

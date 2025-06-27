@@ -15,6 +15,7 @@ import { Restaurant, Home, Favorite, Search } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRecipe } from "../Redux/RecipeActions";
+import { T, useTranslate } from '@tolgee/react';
 
 const SearchDiv = styled("form")(({ theme }) => ({
   position: "relative",
@@ -64,6 +65,7 @@ const NavBar = () => {
   const favouriteRecipe = useSelector((state) => state.favouriteRecipe);
   const [badgeValue, setBadgeValue] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslate();
 
   useEffect(() => {
     setRecipe(searchItem);
@@ -94,14 +96,16 @@ const NavBar = () => {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              Recipe Finder
+              
+<T keyName="recipe-finder-title" />
             </Typography>
             <SearchDiv onSubmit={handleSubmit}>
               <SearchIconWrapper onClick={handleSubmit}>
                 <Search />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Search…"
+                placeholder={
+t('search-placeholder')}
                 inputProps={{ "aria-label": "search" }}
                 value={recipeName}
                 onChange={(e) => {

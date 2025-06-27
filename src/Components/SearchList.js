@@ -4,7 +4,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { fetchRecipe, setSearchItem } from "../Redux/RecipeActions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { T, useTranslate } from '@tolgee/react';
+
 const SearchList = () => {
+  const { t } = useTranslate();
+
   const searchList = [
     "carrot",
     "broccoli",
@@ -159,7 +163,8 @@ const SearchList = () => {
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1, mt: 2 }}>
           <Typography align="center" color="textSecondary" variant="h3" mb={4}>
-            Available search queries
+            
+<T keyName="search-list-available-queries" />
           </Typography>
           <Grid container align="center" spacing={2}>
             {searchList.map((value) => (

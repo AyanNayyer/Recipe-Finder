@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Snackbar, Slide, IconButton } from "@mui/material";
-import { T, useTranslate } from "@tolgee/react";
-
+import { useTranslate, T } from '@tolgee/react';
 import { Close } from "@mui/icons-material";
 const SearchListAlert = () => {
   const { t } = useTranslate();
@@ -24,15 +23,15 @@ const SearchListAlert = () => {
         to="/SearchList"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <Button onClick={handleClose}>
-          
-<T keyName="list-button" />
+        <Button   onClick={handleClose}>
+           
+<T keyName="search-list-alert-list-button" />
         </Button>
       </Link>
       <IconButton
         size="small"
         aria-label={
-t('close-button-label')}
+t('search-list-alert-close-icon-aria-label')}
         color="inherit"
         onClick={handleClose}
       >
@@ -48,7 +47,7 @@ t('close-button-label')}
         autoHideDuration={7000}
         onClose={handleClose}
         message={
-t('search-terms-limited-message')}
+t('search-list-alert-message')}
         action={action}
         
       />

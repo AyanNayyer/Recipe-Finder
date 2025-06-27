@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import Alert from "./Alert";
 import SearchListAlert from "./SearchListAlert";
+import { T, useTranslate } from '@tolgee/react';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Home = () => {
   const loading = useSelector((state) => state.loading);
   const favouriteRecipe = useSelector((state) => state.favouriteRecipe);
   const [showalert, setShowAlert] = useState(false);
+  const { t } = useTranslate();
 
   const handleAddClick = (recipe) => {
     const existingItem = favouriteRecipe.find(
@@ -84,7 +86,8 @@ const Home = () => {
                           handleAddClick(value);
                         }}
                       >
-                        Add Favorite
+                        
+<T keyName="add-favorite-button" />
                       </Button>
                       <Alert open={showalert} setOpen={setShowAlert} />
                     </CardActions>
@@ -95,7 +98,8 @@ const Home = () => {
           ) : (
             <Container maxWidth="sm">
               <Typography variant="h4" align="center" color="textSecondary">
-                Nothing to show, please search something!
+                
+<T keyName="nothing-to-show-message" />
               </Typography>
               <SearchListAlert />
             </Container>
