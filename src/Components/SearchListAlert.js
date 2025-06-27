@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Snackbar, Slide, IconButton } from "@mui/material";
+import { T, useTranslate } from "@tolgee/react";
 
 import { Close } from "@mui/icons-material";
 const SearchListAlert = () => {
+  const { t } = useTranslate();
   const [open, setOpen] = useState(true);
 
   const handleClose = (event, reason) => {
@@ -22,13 +24,15 @@ const SearchListAlert = () => {
         to="/SearchList"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <Button   onClick={handleClose}>
-           List
+        <Button onClick={handleClose}>
+          
+<T keyName="list-button" />
         </Button>
       </Link>
       <IconButton
         size="small"
-        aria-label="close"
+        aria-label={
+t('close-button-label')}
         color="inherit"
         onClick={handleClose}
       >
@@ -43,7 +47,8 @@ const SearchListAlert = () => {
         TransitionComponent={SlideTransition}
         autoHideDuration={7000}
         onClose={handleClose}
-        message="Search terms are limited.Click here to get complete item list"
+        message={
+t('search-terms-limited-message')}
         action={action}
         
       />

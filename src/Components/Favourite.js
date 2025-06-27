@@ -11,6 +11,7 @@ import {
   CardActionArea,
   CardActions,
 } from "@mui/material";
+import { T } from '@tolgee/react';
 
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromFavourite } from "../Redux/RecipeActions";
@@ -63,7 +64,8 @@ const Favourite = () => {
                         handleClick(value.id);
                       }}
                     >
-                      Remove From Favourite
+                      
+<T keyName="remove-from-favourite-button" />
                     </Button>
                   </CardActions>
                 </Card>
@@ -73,7 +75,8 @@ const Favourite = () => {
         ) : (
           <Container maxWidth="sm">
             <Typography variant="h4" align="center" color="textSecondary">
-              Your favourite list is empty!
+              
+<T keyName="empty-favourite-list-message" />
             </Typography>
           </Container>
         )}
